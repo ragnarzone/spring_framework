@@ -4,13 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusicPlayer {
-    //create field which stores music list
-    private List<Music> musicList = new ArrayList<>();
-
-    // initialize music list from spring through getter
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
-    }
+    private Music music;
 
     // create local fields of class
     private String name;
@@ -31,10 +25,17 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    // declare and set method to play music for list of music
-    public void playMusicList(){
-        for(Music music : musicList){
-            System.out.println("Playing: " + music.getSong());
-        }
+    public MusicPlayer(Music music) {
+        this.music = music;
+    }
+
+    public MusicPlayer(){}
+
+    public void setMusic(Music music) {
+        this.music = music;
+    }
+
+    public void playMusic(){
+        System.out.println("Playing: " + music.getSong());
     }
 }

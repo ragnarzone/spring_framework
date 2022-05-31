@@ -25,13 +25,7 @@
 
     <bean id="musicPlayer"
         class="org.chernyshov.spring.MusicPlayer">
-        <property name="musicList">
-            <list>
-                <ref bean="classicalMusic"/>
-                <ref bean="rockMusic"/>
-                <ref bean="jazzMusic"/>
-            </list>
-        </property>
+        <property name="music" ref="classicalMusic"/>
 
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
