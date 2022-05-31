@@ -24,7 +24,8 @@
 
 
     <bean id="musicPlayer"
-        class="org.chernyshov.spring.MusicPlayer">
+        class="org.chernyshov.spring.MusicPlayer"
+        scope="prototype">
         <property name="music" ref="classicalMusic"/>
 
         <property name="name" value="${musicPlayer.name}"/>

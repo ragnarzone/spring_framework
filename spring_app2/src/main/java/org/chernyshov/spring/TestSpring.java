@@ -12,8 +12,16 @@ public class TestSpring {
 
         System.out.println(firstMusicPlayer == secondMusicPlayer);
 
+        // print addresses in memory for two music players
         System.out.println(firstMusicPlayer);
         System.out.println(secondMusicPlayer);
+
+        // redefine volume for music player 1
+        firstMusicPlayer.setVolume(10);
+
+        // check for value in volume for first and second music player
+        System.out.println(firstMusicPlayer.getVolume());
+        System.out.println(secondMusicPlayer.getVolume());
 
         context.close();
     }
