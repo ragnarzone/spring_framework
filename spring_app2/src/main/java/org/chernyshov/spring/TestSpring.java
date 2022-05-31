@@ -7,21 +7,26 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
-        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
-        System.out.println(firstMusicPlayer == secondMusicPlayer);
+        ClassicalMusic classicalMusic = context.getBean("classicalMusic", ClassicalMusic.class);
 
-        // print addresses in memory for two music players
-        System.out.println(firstMusicPlayer);
-        System.out.println(secondMusicPlayer);
+        System.out.println(classicalMusic.getSong());
 
-        // redefine volume for music player 1
-        firstMusicPlayer.setVolume(10);
-
-        // check for value in volume for first and second music player
-        System.out.println(firstMusicPlayer.getVolume());
-        System.out.println(secondMusicPlayer.getVolume());
+//        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//
+//        System.out.println(firstMusicPlayer == secondMusicPlayer);
+//
+//        // print addresses in memory for two music players
+//        System.out.println(firstMusicPlayer);
+//        System.out.println(secondMusicPlayer);
+//
+//        // redefine volume for music player 1
+//        firstMusicPlayer.setVolume(10);
+//
+//        // check for value in volume for first and second music player
+//        System.out.println(firstMusicPlayer.getVolume());
+//        System.out.println(secondMusicPlayer.getVolume());
 
         context.close();
     }
